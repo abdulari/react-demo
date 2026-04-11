@@ -7,7 +7,6 @@ function ZustandDemo() {
     const particleCount = ConfettiStore((state: any) => state.particleCount);
     const shapeSize = ConfettiStore((state: any) => state.shapeSize);
     const spreadDeg = ConfettiStore((state: any) => state.spreadDeg);
-    const colors = ConfettiStore((state: any) => state.colors);
     const fadeOutHeight = ConfettiStore((state: any) => state.fadeOutHeight);
     const setMode = ConfettiStore((state: any) => state.setMode);
 
