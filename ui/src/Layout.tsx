@@ -1,7 +1,11 @@
 import { AppShell, Burger, Grid, NavLink } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaReact, FaHome,FaHeart  } from "react-icons/fa";
 import { useLocation } from 'react-router';
+
+// icons
+import { FaReact, FaHome,FaHeart  } from "react-icons/fa";
+import { PiConfettiFill } from "react-icons/pi";
+import { MdAltRoute } from "react-icons/md";
 
 function Layout(props: { children: React.ReactNode }) {
     const [opened, { toggle }] = useDisclosure();
@@ -47,13 +51,25 @@ function Layout(props: { children: React.ReactNode }) {
                     active={location.pathname === "/"}
                     href="/#/"
                     label="Home"
-                    leftSection={<FaHome size={16} />}
+                    leftSection={<FaHome size={20} color="orange"/>}
+                />
+                <NavLink
+                    active={location.pathname === "/confetti-demo"}
+                    href="/#/confetti-demo"
+                    label="Confetti Demo"
+                    leftSection={<PiConfettiFill  size={20} color="brown"/>}
                 />
                 <NavLink
                     active={location.pathname === "/zustand-demo"}
                     href="/#/zustand-demo"
                     label="Zustand Demo"
-                    leftSection={<FaHeart  size={16} color="red"/>}
+                    leftSection={<FaHeart  size={20} color="red"/>}
+                />
+                <NavLink
+                    active={location.pathname === "/react-router-demo"}
+                    href="/#/react-router-demo"
+                    label="React Router Demo"
+                    leftSection={<MdAltRoute size={25} color="darkgreen"/>}
                 />
             </AppShell.Navbar>
 

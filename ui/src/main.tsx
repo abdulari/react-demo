@@ -11,6 +11,8 @@ import '@mantine/core/styles.css';
 // pages
 import Home from "./page/Home.tsx"
 import ZustandDemo from './page/ZustandDemo.tsx';
+import ConfettiDemo from './page/ConfettiDemo.tsx';
+import ReactRouterDemo from './page/ReactRouterDemo.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,6 +21,8 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/zustand-demo" element={<ZustandDemo />} />
+          <Route path="/confetti-demo" element={<ConfettiDemo />} />
+          <Route path="/react-router-demo" element={<ReactRouterDemo />} />
         </Routes>
       </HashRouter>
     </MantineProvider>

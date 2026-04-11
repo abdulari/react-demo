@@ -13,10 +13,11 @@ function Home() {
                 <li><b>Mantine</b> - React Component</li>
                 <li><b>React Router</b> - Navigation</li>
                 <li><b>React Icons</b> - Icons</li>
+                <li><b>React Confetti Boom</b> - Confetti</li>
             </ul>
 
             <h3>Feature</h3>
-            <p>all feature from the techstack can be experienced in this page, except for Zustand and React Router</p>
+            <p>all feature from the techstack can be experienced in this page, except for Confetti, Zustand and React Router</p>
             <ul>
                 <li><b>Vite</b> - compile React source code into presentable HTML</li>
                 <li><b>React</b> - Typescript - a strict language for better React developer experience</li>
@@ -24,6 +25,7 @@ function Home() {
                 <li><b>React Icons</b> - icons </li>
                 <li><b>Zustand</b> - State management without need to pass around in props</li>
                 <li><b>React Router</b> - handle navigation for Single Page Application</li>
+                <li><b>React Confetti Boom</b> - Confetti demo to showcase Zustand state</li>
             </ul>
         </Layout>
     )
