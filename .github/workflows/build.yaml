@@ -6,8 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: oven/bun:debian
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: build ui
         run: cd ui && bun install && bun run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ui/dist # The folder the action should deploy.
+          branch: pages # The branch the action should deploy to.
