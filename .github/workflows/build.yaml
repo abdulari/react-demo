@@ -18,3 +18,9 @@ jobs:
 
       - name: build ui
         run: cd ui && bun install && bun run build
+
+      - name: deploy to gh-pages
+        run: |
+          git worktree add -B gh-pages gh-pages origin/gh-pages
+          cp -r ui/dist/* gh-pages/
+          cd gh-pages && git add . && git commit -m "Update gh-pages" && git push origin gh-pages
