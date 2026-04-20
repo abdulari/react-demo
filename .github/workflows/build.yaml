@@ -9,7 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: oven/bun:debian
+      image: abdulari/test:1
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     permissions:
       contents: write
     steps:
@@ -21,6 +24,10 @@ jobs:
 
       - name: deploy to gh-pages
         run: |
-          git worktree add -B gh-pages gh-pages origin/gh-pages
-          cp -r ui/dist/* gh-pages/
-          cd gh-pages && git add . && git commit -m "Update gh-pages" && git push origin gh-pages
+          git config --global --add safe.directory /__w/react-demo/react-demo
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          git branch
+          git worktree add gh-pages origin/gh-pages
+          cd gh-pages && cp -r ../ui/dist/* . && git add . && git commit -m "Update gh-pages" && git push origin HEAD:gh-pages
