@@ -1,0 +1,13 @@
+name: CI Example
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: oven/bun:debian
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: build ui
+        run: cd ui && bun install && bun run build
