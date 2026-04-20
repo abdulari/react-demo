@@ -1,5 +1,9 @@
-name: CI Example
-on: [push]
+name: Build UI
+on:
+  push:
+    branches:
+      - main
+      - cicd/build
 
 jobs:
   build:
@@ -14,9 +18,3 @@ jobs:
 
       - name: build ui
         run: cd ui && bun install && bun run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: ui/dist # The folder the action should deploy.
-          branch: pages # The branch the action should deploy to.
